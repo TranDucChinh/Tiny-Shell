@@ -2,6 +2,9 @@
 import os
 import datetime
 import subprocess
+import tkinter as tk
+from Countdown import CountdownApp
+
 
 def open_calculator():
     try:
@@ -36,6 +39,8 @@ def help():
     print("7. Datetime: In ngày giờ hiện tại.")
     print("8. Calculator: Mở máy tính.")
     print("9. Clock: Mở đồng hồ.")
+    print("10. Camera: Mở camera.") 
+    print("11. Countdown <countdown_time>: Bắt đầu đếm ngược thời gian.")
 
 def create_file(file_name):
     with open(file_name, 'w') as file:
@@ -58,3 +63,14 @@ def open_clock():
         subprocess.Popen('start "" /b "ms-clock:"', shell=True)
     except Exception as e:
         print(f"Lỗi khi mở đồng hồ: {e}")
+
+def open_camera():
+    try:
+        subprocess.Popen('start "" /b "microsoft.windows.camera:"', shell=True)
+    except Exception as e:
+        print(f"Lỗi khi mở camera: {e}")
+
+def countdown(countdown_time):
+    root = tk.Tk()
+    app = CountdownApp(root, countdown_time)
+    root.mainloop()

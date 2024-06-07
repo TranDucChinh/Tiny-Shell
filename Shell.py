@@ -40,6 +40,13 @@ def main():
         elif command == "Clock":    
             open_clock()
 
+        elif command == "Camera":
+            open_camera()
+
+        elif command.startswith("Countdown "):
+            countdown_time = command[10:].strip()
+            countdown(int(countdown_time))
+
         else:
             print("Lệnh không hợp lệ.")
         print('')
