@@ -13,6 +13,7 @@ class CountdownApp:
         self.remaining_time = countdown_time
         self.running = False
         self.paused = False
+        self.stop=False
 
         self.countdown_label = tk.Label(root, text="", font=("Helvetica", 200))
         self.countdown_label.pack()
@@ -36,11 +37,21 @@ class CountdownApp:
     def start_countdown(self):
         if not self.running:
             self.running = True
-            self.thread = threading.Thread(target=self.countdown)
-            self.thread.start()
-
+            self.countdown_thread = threading.Thread(target=self.countdown)
+            self.listen_thread = threading.Thread(target=self.listen_for_stop)
+            self.countdown_thread.start()
+            self.listen_thread.start()
+    def listen_for_stop(self):
+        while True and self.remaining_time>0:
+            command = input()
+            if command.strip() == "Stop":
+                self.stop = True
+            if command.strip() == "Continue":
+                self.stop = False
     def countdown(self):
-        while self.remaining_time >= 0 and self.running:
+        global stop_countdown
+        while self.remaining_time >= 0:
+          if self.running and not self.stop:
             if not self.paused:
                 self.countdown_label.config(text=str(self.remaining_time))
                 time.sleep(1)
