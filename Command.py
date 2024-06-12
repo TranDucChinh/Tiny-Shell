@@ -32,16 +32,17 @@ def help():
     print("Các lệnh hỗ trợ:")
     print("1. List files: Liệt kê tất cả các tập tin và thư mục trong thư mục hiện tại.")
     print("2. Change to <path>: Chuyển đến thư mục con hoặc thư mục cha.")
-    print("3. Clear screen: Xóa màn hình.")
-    print("4. Exit: Thoát chương trình.")
-    print("5. Create file <file_name>: Tạo một tệp mới.")
-    print("6. Create directory <dir_name>: Tạo một thư mục mới.")
-    print("7. Datetime: In ngày giờ hiện tại.")
-    print("8. Calculator: Mở máy tính.")
-    print("9. Clock: Mở đồng hồ.")
-    print("10. Camera: Mở camera.") 
-    print("11. Countdown <countdown_time>: Bắt đầu đếm ngược thời gian.")
-
+    print("3. Create file <file_name>: Tạo một tệp mới.")
+    print("4. Create directory <dir_name>: Tạo một thư mục mới.")
+    print("5. Clear screen: Xóa màn hình.")
+    print("6. Datetime: In ngày giờ hiện tại.")
+    print("7. Calculator: Mở máy tính.")
+    print("8. Clock: Mở đồng hồ.")
+    print("9. Camera: Mở camera.") 
+    print("10. Countdown <countdown_time>: Bắt đầu đếm ngược thời gian.")
+    print(" + Stop: Dừng đếm ngược.")
+    print(" + Continue: Tiếp tục đếm ngược.")
+    print("11. Exit: Thoát chương trình.")
 def create_file(file_name):
     with open(file_name, 'w') as file:
         file.write('')
@@ -74,3 +75,4 @@ def countdown(countdown_time):
     root = tk.Tk()
     app = CountdownApp(root, countdown_time)
     root.mainloop()
+    
