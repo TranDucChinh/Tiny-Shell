@@ -49,7 +49,6 @@ class CountdownApp:
             if command.strip() == "Continue":
                 self.stop = False
     def countdown(self):
-        global stop_countdown
         while self.remaining_time >= 0:
           if self.running and not self.stop:
             if not self.paused:
