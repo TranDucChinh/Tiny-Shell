@@ -1,6 +1,6 @@
 Chạy: python Shell.py
 
-.Các lệnh hỗ trợ:
+Các lệnh hỗ trợ:
 1. List files: Liệt kê tất cả các tập tin và thư mục trong thư mục hiện tại.
 2. Change to <path>: Chuyển đến thư mục con hoặc thư mục cha.
 3. Create file <file_name>: Tạo một tệp mới.
@@ -12,6 +12,7 @@ Chạy: python Shell.py
 9. Camera: Mở camera.
 10. Countdown <countdown_time>: Bắt đầu đếm ngược thời gian.
  + Stop: Dừng đếm ngược.
- + Continue: Tiếp tục đếm ngược.
+ + Resume: Tiếp tục đếm ngược.
+ + Kill: Tắt đếm ngược.
 11. Exit: Thoát chương trình.
 
