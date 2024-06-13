@@ -5,7 +5,6 @@ import subprocess
 import tkinter as tk
 from Countdown import CountdownApp
 
-
 def open_calculator():
     try:
         subprocess.Popen('calc.exe')
@@ -41,7 +40,8 @@ def help():
     print("9. Camera: Mở camera.") 
     print("10. Countdown <countdown_time>: Bắt đầu đếm ngược thời gian.")
     print(" + Stop: Dừng đếm ngược.")
-    print(" + Continue: Tiếp tục đếm ngược.")
+    print(" + Resume: Tiếp tục đếm ngược.")
+    print(" + Kill: Tắt đếm ngược.")
     print("11. Exit: Thoát chương trình.")
 def create_file(file_name):
     with open(file_name, 'w') as file:
