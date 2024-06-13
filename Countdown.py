@@ -6,6 +6,7 @@ import threading
 class CountdownApp:
     def __init__(self, root, countdown_time):
         self.root = root
+        self.root.title("Countdown")
         self.frame = tk.Frame(root, width=500, height=100)
         self.frame.pack_propagate(False) 
         self.frame.pack()
@@ -42,12 +43,21 @@ class CountdownApp:
             self.countdown_thread.start()
             self.listen_thread.start()
     def listen_for_stop(self):
-        while True and self.remaining_time>0:
-            command = input()
-            if command.strip() == "Stop":
+        read=True
+        while True and self.remaining_time>0 and not self.stop:
+            if read:
+                command = input()
+            if command.strip() == "Kill":
                 self.stop = True
-            if command.strip() == "Continue":
+                self.running = False
+                self.root.destroy()
+            if command.strip() == "Resume":
                 self.stop = False
+            if command.strip() == "Stop":
+                self.stop=True
+            if self.remaining_time<=0:
+                read=False
+        self.root.quit()
     def countdown(self):
         while self.remaining_time >= 0:
           if self.running and not self.stop:
@@ -58,6 +68,10 @@ class CountdownApp:
             else:
                 time.sleep(1)
         self.root.quit()
+    
+    def stop_countdown(self):
+        self.running = False
+        self.stop = True
 
     def pause_countdown(self):
         self.paused = True
