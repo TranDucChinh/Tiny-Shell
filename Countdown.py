@@ -52,9 +52,9 @@ class CountdownApp:
                 self.running = False
                 self.root.destroy()
             if command.strip() == "Resume":
-                self.stop = False
+                self.running=True
             if command.strip() == "Stop":
-                self.stop=True
+                self.running=False
             if self.remaining_time<=0:
                 read=False
         self.root.quit()
