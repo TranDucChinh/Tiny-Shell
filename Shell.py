@@ -47,6 +47,8 @@ def main():
             countdown_time = command[10:].strip()
             countdown(int(countdown_time))
 
+        elif command == "Manager":  
+            manager()
         else:
             print("Lệnh không hợp lệ.")
         print('')
