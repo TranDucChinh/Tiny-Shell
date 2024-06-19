@@ -1,7 +1,9 @@
-import webbrowser
-
-def search_google(query):
-    url = "https://www.google.com/search?q=" + query
-    webbrowser.open_new_tab(url)
-
-search_google("Python programming language")
+x='Test.bat'
+with open(x, 'r') as file:
+    commands=[]
+    for line in file:
+        if line[-1:]=='\n':
+            commands.append(line[:-1])
+        else:
+            commands.append(line)
+    print(commands)

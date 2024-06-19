@@ -48,7 +48,8 @@ def help():
     print("12. Manager: Mở ứng dụng quản lý tiến trình.")
     print(" + Count <count_time>: Bắt đầu đếm.")
     print(" + Countdown <countdown_time>: Bắt đầu đếm ngược.")
-    print("13. Exit: Thoát chương trình.")
+    print("13. Read <file.bat>: Chạy file .bat")
+    print("14. Exit: Thoát chương trình.")
 def create_file(file_name):
     with open(file_name, 'w') as file:
         file.write('')

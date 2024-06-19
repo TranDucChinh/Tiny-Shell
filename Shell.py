@@ -4,8 +4,15 @@ from Title import *
 def main():
     clear_screen()
     print_title()
+    read_bat=False
     while True:
-        command = input("Nhập lệnh: ").strip()
+        if read_bat:
+            command=commands[command_counter]
+            command_counter+=1
+            if command_counter==len(commands):
+                read_bat=False
+        else:
+            command = input("Nhập lệnh: ").strip()
         if command == "Exit":
             break
         
@@ -52,7 +59,19 @@ def main():
 
         elif command.startswith("Google "):
             google(command[7:])
-            
+        
+        elif command.startswith("Read "):
+            file_name=command[5:]
+            with open(file_name, 'r') as file:
+                commands=[]
+                for line in file:
+                    if line[-1:]=='\n':
+                        commands.append(line[:-1])
+                    else:
+                        commands.append(line)
+            command_counter=0
+            read_bat=True
+
         else:
             print("Lệnh không hợp lệ.")
         print('')
