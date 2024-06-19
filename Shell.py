@@ -49,6 +49,10 @@ def main():
 
         elif command == "Manager":  
             manager()
+
+        elif command.startswith("Google "):
+            google(command[7:])
+            
         else:
             print("Lệnh không hợp lệ.")
         print('')

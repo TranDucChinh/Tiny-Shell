@@ -78,8 +78,9 @@ class ProcessManager(tk.Tk):
             selected_item = selected_items[0]
             process = self.processes[selected_item]
             process.kill()
-            self.tree.delete(selected_item)
-            del self.processes[selected_item]
+            #self.tree.delete(selected_item)
+            #del self.processes[selected_item]
+            self.tree.set(selected_item, 'Status', 'Killed')
         else:
             print("No process selected")
 
