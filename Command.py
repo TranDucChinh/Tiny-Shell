@@ -4,7 +4,7 @@ import datetime
 import subprocess
 import tkinter as tk
 from Countdown import CountdownApp
-
+from Table import ProcessManager
 
 def open_calculator():
     try:
@@ -41,8 +41,12 @@ def help():
     print("9. Camera: Mở camera.") 
     print("10. Countdown <countdown_time>: Bắt đầu đếm ngược thời gian.")
     print(" + Stop: Dừng đếm ngược.")
-    print(" + Continue: Tiếp tục đếm ngược.")
-    print("11. Exit: Thoát chương trình.")
+    print(" + Resume: Tiếp tục đếm ngược.")
+    print(" + Kill: Tắt đếm ngược.")
+    print("11. Manager: Mở ứng dụng quản lý tiến trình.")
+    print(" + Count <count_time>: Bắt đầu đếm.")
+    print(" + Countdown <countdown_time>: Bắt đầu đếm ngược.")
+    print("12. Exit: Thoát chương trình.")
 def create_file(file_name):
     with open(file_name, 'w') as file:
         file.write('')
@@ -75,4 +79,7 @@ def countdown(countdown_time):
     root = tk.Tk()
     app = CountdownApp(root, countdown_time)
     root.mainloop()
-    
+
+def manager():
+    app = ProcessManager()
+    app.mainloop() 
