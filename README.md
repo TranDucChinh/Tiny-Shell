@@ -34,7 +34,7 @@ Tiny Shell là một công cụ mã nguồn mở được thiết kế để t�
 **Bước 1:** Tạo bản sao của Tiny Shell.
 
 ```
-git clone 
+git clone https://github.com/TranDucChinh/Tiny-Shell.git
 ```
 **Bước 2:** Mở Command Prompt và chạy dòng lệnh:
 ```
