@@ -60,8 +60,8 @@ def main():
         elif command.startswith("Google "):
             google(command[7:])
         
-        elif command.startswith("Read "):
-            file_name=command[5:]
+        elif command.startswith("Run "):
+            file_name=command[4:]
             with open(file_name, 'r') as file:
                 commands=[]
                 for line in file:
